@@ -1,8 +1,7 @@
 import "./globals.css";
-import TestComponent from "@/components/TestComponent";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { AppProps } from 'next/app';
+
 
 export const metadata = {
   title: "Event Management System",
