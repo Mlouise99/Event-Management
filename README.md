@@ -4,8 +4,7 @@
 
 ## Features of event management system
 # Overview
-A web application for viewing and booking events, featuring both user and admin functionalities.
-
+ web application that allows users to view available events, book seats, and manage event details. It features an admin panel for event creation and management, and a user interface for booking and viewing events.
 # Features
 Event Listing: View event details like title, description, date, and available seats.
 Booking System: Book seats with validations for availability.
