@@ -57,7 +57,8 @@ const HomePage = () => {
             <p>{event.description}</p>
             <p className="text-gray-500">Date: {event.date}</p>
             <p className="text-gray-500">Available Seats: {event.seats}</p>
-            <Booking event={event} onBooking={(details) => handleBooking(event.id, details)} />
+            <Booking event={event} onBooking={(details: BookingDetail) => handleBooking(event.id, details)} />
+
           </div>
         ))}
       </div>
