@@ -1,24 +1,33 @@
 import { useState } from 'react';
 
-const Booking = ({ event, onBooking }) => {
+interface BookingProps {
+    event: {
+        id: number;
+        title: string;
+        description: string;
+        date: string;
+        seats: number;
+        bookings: { userName: string; userEmail: string; seats: number }[];
+    };
+    onBooking: (details: { userName: string; userEmail: string; seats: number }) => void;
+}
+
+const Booking: React.FC<BookingProps> = ({ event, onBooking }) => {
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [seats, setSeats] = useState(1);
     const [message, setMessage] = useState('');
 
     const handleBooking = () => {
-
         if (!userName || !userEmail || seats <= 0) {
             setMessage('Please fill in all fields.');
             return;
         }
 
-
         if (seats > event.seats) {
             setMessage(`Not enough seats available. Only ${event.seats} seat(s) left.`);
             return;
         }
-
 
         const bookingDetails = { userName, userEmail, seats };
         onBooking(bookingDetails);
